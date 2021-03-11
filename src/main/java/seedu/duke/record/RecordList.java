@@ -9,7 +9,7 @@ public class RecordList {
     private ArrayList<Record> recordList;
 
     public RecordList() {
-        recordList = new ArrayList<>();
+        recordList = new ArrayList<Record>();
     }
 
     public RecordList(ArrayList<Record> recordList) {
@@ -24,7 +24,6 @@ public class RecordList {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     public Record getRecordAt(int recordIndex) {
@@ -49,17 +48,5 @@ public class RecordList {
 
     public int getRecordCount() {
         return recordList.size();
-    }
-
-    public void listExpenses(Ui ui) {
-        ui.printMessage("List expenses!");
-    }
-
-    public void listLoans(Ui ui) {
-        ui.printMessage("List loans!");
-    }
-
-    public void listSavings(Ui ui) {
-        ui.printMessage("List savings!");
     }
 }

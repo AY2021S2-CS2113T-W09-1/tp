@@ -18,4 +18,10 @@ public class Loan extends Record {
     public void setReturnDate(String date) {
         this.returnDate = date;
     }
+
+    @Override
+    public String toString() {
+        //temporary placeholder. output format to be discussed.
+        return "List loans!";
+    }
 }

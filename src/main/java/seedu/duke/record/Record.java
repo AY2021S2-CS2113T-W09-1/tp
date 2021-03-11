@@ -27,4 +27,10 @@ public abstract class Record {
     public String convertFileFormat() {
         return String.format(FILE_OUTPUT_STRING_FORMAT, description, amount, issueDate);
     }
+
+    @Override
+    public String toString() {
+        //temporary placeholder. output format to be discussed.
+        return "Common description across Loan, Saving & Expense classes";
+    }
 }

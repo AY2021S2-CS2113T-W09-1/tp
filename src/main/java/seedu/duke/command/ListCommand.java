@@ -44,18 +44,18 @@ public class ListCommand extends Command {
     }
 
     @Override
-    public void execute(RecordList records, Ui ui, Storage storage) {
+    public void execute(RecordList recordList, Ui ui, Storage storage) {
         switch (recordType) {
         case EXPENSE:
-            records.listExpenses(ui);
+            ui.printExpenses();
             break;
         case LOAN:
-            records.listLoans(ui);
+            ui.printLoans();
             break;
         case SAVING:
             // Fallthrough
         default:
-            records.listSavings(ui);
+            ui.printSavings();
         }
     }
 }

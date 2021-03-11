@@ -37,8 +37,23 @@ public class RemoveCommand extends Command {
         }
     }
 
+    /**
+     * Executes the delete function.
+     * Prints a message containing the record that will be removed.
+     * Removes the record at the specified index.
+     *
+     * @param records is the recordList.
+     * @param ui is the Ui object that interacts with the user.
+     * @param storage is the Storage object that reads and writes to the save file.
+     */
     @Override
     public void execute(RecordList records, Ui ui, Storage storage) {
-        ui.printMessage("Record to remove: " + recordNumber);
+        int recordNumberInt = Integer.parseInt(recordNumber);
+        int recordNumberInList = recordNumberInt - 1;
+        // Object description is used here, may need to be replaced with the full record entry once
+        // list structure is finalized
+        String recordName = records.getRecordAt(recordNumberInList).getDescription();
+        ui.printMessage("Record to remove: " + recordName);
+        records.deleteRecordAt(recordNumberInList);
     }
 }
