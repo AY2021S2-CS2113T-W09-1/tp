@@ -1,0 +1,22 @@
+@startuml
+skinparam classAttributeIconSize 0
+hide circle
+
+class RecordList {
+    - recordList: ArrayList<Record>
+    + RecordList()
+    + RecordList(recordListData: ArrayList<Record>)
+    + addRecord(recordToAdd: Record)
+    + getRecordAt(recordIndex: int): Record
+    + deleteRecordAt(int recordIndex): Record
+    + deleteAllRecords()
+    + isEmpty()
+    + getRecordCount(): int
+}
+
+class Finux {
+    +main()
+}
+
+Finux -> "1"RecordList
+@enduml

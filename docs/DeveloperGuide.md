@@ -306,7 +306,19 @@ If violations occur at any point of the input validation, the `Command` is not c
 is thrown back to the `CommandHandler`.
 
 ### 3.6 RecordList Component
-The `recordlist` class maintains an internal arraylist of record objects used throughout Finux's execution.
+#### Description
+The RecordList component consists of only one class which is the RecordList itself. 
+The role of the RecordList is to maintain an internal ArrayList of Record objects
+created throughout Finux’s execution.
+
+#### Design
+This maintenance is achieved through the traditional Object Oriented Programming (OOP) style, 
+where operations relating to the list can only be performed through the interfaces defined in
+the RecordList class. Doing so allows us to restrict the access to the internal ArrayList from 
+the outside world, successfully achieving the information hiding aspect under the Encapsulation concept of OOP.
+
+When Finux starts up, Finux instantiates the RecordList with data loaded from the save file, finux.txt.
+The instantiation first started off with
 
 
 ### 3.7 Storage Component
@@ -782,19 +794,27 @@ compared to the second approach, the third approach minimises the coupling withi
 
 
 ### 4.7 Credit Score Feature
-The `creditscore` feature aims to provide users with a computation of borrowers' credibility via a point scoring system.
+#### Description
+The credit score feature aims to provide users with a way to assess the credibility of his/her borrowers
+through a point scoring system. By providing the name of a borrower as an argument to the credit score command,
+the command will compute and output the credit score of the borrower. Credit score ranges from 0 to 100 inclusive,
+and is computed based on the following pseudo code:
 
-`creditscore <borrower_name>`
+IF DAYS_TAKEN_TO_RETURN < 7:
+CREDIT_SCORE += 5
+ELSE IF DAYS_TAKEN_TO_RETURN <= 14:
+CREDIT_SCORE -= 10
+ELSE IF DAYS_TAKEN_TO_RETURN <= 28:
+CREDIT_SCORE -= 20
+ELSE:
+CREDIT_SCORE -= 50
 
-With this score, Finux users can view and assess the credibility of the borrowers.
+#### Design
+To maintain the accuracy of this computation, the software only saves the borrower name along with the
+corresponding credit score into finux.txt. The credit score referred to in this case is computed from
+the loans that the borrower has returned. The saved credit score value does not include credit score
+computed from loans that the borrower has yet to return. This saved data will be loaded on Finux’s startup.
 
-Example:
-
-`creditscore Tom`
-
-Output:
-
-Credit score for Tom is 90
 
 ## 5. Documentation, Logging, Testing, and DevOps
 
