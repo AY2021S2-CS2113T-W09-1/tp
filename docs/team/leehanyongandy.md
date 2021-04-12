@@ -61,21 +61,3 @@ the UML class, object and sequence diagrams.
 
 Other contributions to the DG are:
 * Appendix A consisting of Target User Profile and Value Proposition
-
----
-
-### Contributions to Team-based Tasks
-
-1. Delegating of UG, DG, JavaDoc
-1. Creating of Project Agenda (with Jason)
-1. Documenting of Meeting Notes (with Jason)
-1. Maintaining document sharing space (with Jason)
-1. Updating Project Log (Along with Jason)
-1. Setting up project environment on Github \
-   6.1 Creating labels \
-   6.2 Creating milestones \
-   6.3 Creating issue tracker
-1. Facilitating of project meeting
-1. Vetting of UG
-1. Demoing of team's work flow process
-1. Deadline tracking and management
